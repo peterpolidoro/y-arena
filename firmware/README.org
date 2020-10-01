@@ -1,0 +1,13 @@
+#+TITLE: y-arena firmware
+#+AUTHOR: Peter Polidoro
+#+EMAIL: peterpolidoro@gmail.com
+
+* Repository Information
+  - Name :: y-arena firmware
+  - Author :: Peter Polidoro
+  - Email :: peterpolidoro@gmail.com
+
+** Description
+
+   Documentation and files for the Y Arena firmware.
+
