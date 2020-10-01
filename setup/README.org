@@ -38,18 +38,24 @@
    #+BEGIN_SRC sh
      git clone https://github.com/janelia-experimental-technology/y-arena.git
      git submodule init
-     git submodule update
+     git submodule update --init --recursive
    #+END_SRC
 
 ** Run Setup Script
 
    #+BEGIN_SRC sh
      ./pisetup.py install
+     sudo reboot
    #+END_SRC
 
-*** Updating this repository
+** Updating
 
-    #+BEGIN_SRC sh
-      git pull origin master
-      git submodule update
-    #+END_SRC
+   #+BEGIN_SRC sh
+     sudo apt update
+     sudo apt full-upgrade
+     ./pisetup.py uninstall
+     git pull origin master
+     git submodule update --init --recursive
+     ./pisetup.py install
+     sudo reboot
+   #+END_SRC

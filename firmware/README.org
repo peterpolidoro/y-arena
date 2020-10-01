@@ -11,3 +11,35 @@
 
    Documentation and files for the Y Arena firmware.
 
+* Update Firmware
+
+** Connect to Raspberry Pi
+
+*** Cockpit Web Console
+
+    https://ycontroller.local:9090
+
+*** SSH
+
+    #+BEGIN_SRC sh
+      ssh yuser@ycontroller.local
+    #+END_SRC
+
+** Update Repository
+
+   #+BEGIN_SRC sh
+     git pull origin master
+     git submodule update --init --recursive
+   #+END_SRC
+
+** Install firmware updater
+
+   #+BEGIN_SRC sh
+     sudo apt install python3-venv
+     python3 -m venv ~/venvs/fu
+     source ~/venvs/fu/bin/activate
+     pip install firmware_uploader
+     ls /dev/ttyACM*
+     # make sure all 16 boards are connected
+     fu -e teensy40pi ./YArenaValveController/ "(/dev/ttyACM)([0-9]|1[0-5])"
+   #+END_SRC
