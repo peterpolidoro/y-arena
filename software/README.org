@@ -11,6 +11,25 @@
 
    Documentation and files for the Y Arena software.
 
+* Docker Container Runs Automatically When Raspberry Pi Boots
+
+  Make sure all arenas are connected by USB to Raspberry Pi before powering it
+  up.
+
+  Container starts automatically shortly after booting the Raspberry Pi.
+
+* Run Another Docker Container to Publish Test Messages
+
+  #+BEGIN_SRC sh
+    docker run --rm --net=host --pid=host -it y_arena_valve_controller:latest
+    ros2 topic pub --once /arena_valves_open y_arena_interfaces/msg/ArenaValves "{arena: 0, valves: [0, 1, 2]}"
+  #+END_SRC
+
+* Run Docker Container Manually For Testing or After Stopping
+
+  #+BEGIN_SRC sh
+  #+END_SRC
+
 * Update Containers
 
   #+BEGIN_SRC sh
@@ -38,27 +57,4 @@
     #+END_SRC
 
     #+BEGIN_SRC sh
-      docker run -v /dev/arena:/dev/arena -it --restart unless-stopped\
-             --device=/dev/ttyACM0 \
-             --device=/dev/ttyACM1 \
-             --device=/dev/ttyACM2 \
-             --device=/dev/ttyACM3 \
-             --device=/dev/ttyACM4 \
-             --device=/dev/ttyACM5 \
-             --device=/dev/ttyACM6 \
-             --device=/dev/ttyACM7 \
-             --device=/dev/ttyACM8 \
-             --device=/dev/ttyACM9 \
-             --device=/dev/ttyACM10 \
-             --device=/dev/ttyACM11 \
-             --device=/dev/ttyACM12 \
-             --device=/dev/ttyACM13 \
-             --device=/dev/ttyACM14 \
-             --device=/dev/ttyACM15 \
-             y_arena_valve_controller_ros_ycontroller \
-             ros2 launch y_arena_valve_controller controller.launch.py
-    #+END_SRC
-
-    #+BEGIN_SRC sh
-      ros2 topic pub --once /arena_valves_on y_arena_interfaces/msg/ArenaValves "{arena: 0, valves: [0, 1, 2]}"
     #+END_SRC
