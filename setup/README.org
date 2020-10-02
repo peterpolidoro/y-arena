@@ -16,7 +16,7 @@
 
 * Raspberry Pi Setup
 
-  ./raspberrypi_setup/README.org
+  [[./raspberrypi_setup/README.org]]
 
   - username: yuser
   - hostname: ycontroller

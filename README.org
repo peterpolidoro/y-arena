@@ -14,3 +14,52 @@
 
    Main repository for the Turner Lab Y-Arena.
 
+* Usage
+
+* System Architecture
+
+** Arena
+
+   Each arena contains three arms. The three arms are arranged so the arena
+   looks like the letter "Y". A fly is placed in the arena and can walk up and
+   down each of the three arms. Each arm has three valves, allowing the user to
+   select one of three odors for each arm at a time. So there are a total of
+   nine valves for each arena. Three and only three valves are open at any given
+   time, one for each arena arm.
+
+*** Vector Representation of Open Valves
+
+    |             | ARM 0  | ARM 1  | ARM 2  |
+    |-------------+--------+--------+--------|
+    | VALVE 2     | OPEN   | CLOSED | CLOSED |
+    | VALVE 1     | CLOSED | OPEN   | CLOSED |
+    | VALVE 0     | CLOSED | CLOSED | OPEN   |
+    | valves_open | 2      | 1      | 0      |
+
+    |             | ARM 0  | ARM 1  | ARM 2  |
+    |-------------+--------+--------+--------|
+    | VALVE 2     | OPEN   | OPEN   | OPEN   |
+    | VALVE 1     | CLOSED | CLOSED | CLOSED |
+    | VALVE 0     | CLOSED | CLOSED | CLOSED |
+    | valves_open | 2      | 2      | 2      |
+
+    The three open valves can be represented by a vector, where each element of
+    the vector represents one of the arms, ARM 0, ARM 1, and ARM 2. Each vector
+    element can take one of three values, 0, 1, or 2, representing VALVE 0,
+    VALVE 1, or VALVE 2.
+
+* Setup
+
+  [[./setup/README.org]]
+
+* Firmware
+
+  [[./firmware/README.org]]
+
+* Hardware
+
+  [[./hardware/README.org]]
+
+* Software
+
+  [[./software/README.org]]
