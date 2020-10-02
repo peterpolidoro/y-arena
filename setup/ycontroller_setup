@@ -9,7 +9,7 @@ class Docker(object):
 
     def __init__(self,dry_run,*args,**kwargs):
         self.dry_run = dry_run
-        self.root_name = 'piroot'
+        self.root_name = 'ycontroller_root'
         self.path = Path(self.root_name)
 
     def _output(self,args):

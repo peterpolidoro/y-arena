@@ -4,9 +4,6 @@
 
 * Repository Information
   - Name :: y-arena setup
-  - Version :: 1.0.0
-  - License :: BSD
-  - URL :: https://github.com/janelia-experimental-technology/y-arena
   - Author :: Peter Polidoro
   - Email :: peterpolidoro@gmail.com
 
@@ -14,14 +11,20 @@
 
    Setup instructions for the Y-Arena system.
 
-* Raspberry Pi Setup
+* Setup Host Machine to Communicate with ycontroller
+
+** Windows
+
+   [[./HOST_SETUP_WINDOWS.org]]
+
+* Setup Raspberry Pi as ycontroller
 
   [[./raspberrypi_setup/README.org]]
 
   - username: yuser
   - hostname: ycontroller
 
-** Connect to Raspberry Pi
+** Connect to ycontroller from Host Machine
 
 *** Cockpit Web Console
 
@@ -45,7 +48,7 @@
 
    #+BEGIN_SRC sh
      cd ~/y-arena/setup/
-     ./pisetup install
+     ./ycontroller_setup install
    #+END_SRC
 
 ** Build Software Containers
@@ -58,9 +61,9 @@
      sudo apt update
      sudo apt full-upgrade
      cd ~/y-arena/setup/
-     ./pisetup uninstall
+     ./ycontroller_setup uninstall
      git pull origin master
      git submodule update --recursive
-     ./pisetup install
+     ./ycontroller_setup install
      sudo reboot
    #+END_SRC

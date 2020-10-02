@@ -11,37 +11,39 @@
 
    Documentation and files for the Y Arena software.
 
-* Docker Container Runs Automatically When Raspberry Pi Boots
+* Container Runs Automatically When Raspberry Pi Boots
 
   Make sure all arenas are connected by USB to Raspberry Pi before powering it
   up.
 
   Container starts automatically shortly after booting the Raspberry Pi.
 
-* Run Another Docker Container to Publish Test Messages
+* Run Another Container to Publish Test Messages
 
   #+BEGIN_SRC sh
     docker run --rm --net=host --pid=host -it y_arena_valve_controller:latest
     ros2 topic pub --once /arena_valves_open y_arena_interfaces/msg/ArenaValves "{arena: 0, valves: [0, 1, 2]}"
   #+END_SRC
 
-* Run Docker Container Manually For Testing or After Stopping
+* Run Container Manually For Testing or After Stopping
 
   #+BEGIN_SRC sh
+    find_arenas_then_run
   #+END_SRC
 
-* Update Containers
+* Rebuilding the Container After Updating Repository
 
   #+BEGIN_SRC sh
     cd ~/y-arena
     git pull origin master
     git submodule update --recursive
     cd software/y_arena_valve_controller_ros
+    docker stop $(docker ps -aq)
     docker system prune -f
     docker build -t y_arena_valve_controller:latest .
   #+END_SRC
 
-*** Development
+* Create Test Container for Development
 
     #+BEGIN_SRC sh
       docker system prune -f
@@ -54,7 +56,4 @@
       source /opt/ros/dashing/setup.bash
       cd /ws
       colcon build
-    #+END_SRC
-
-    #+BEGIN_SRC sh
     #+END_SRC
