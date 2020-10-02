@@ -28,6 +28,7 @@
 ** Update Repository
 
    #+BEGIN_SRC sh
+     cd ~/y-arena
      git pull origin master
      git submodule update --recursive
    #+END_SRC
@@ -41,5 +42,6 @@
      pip install firmware_uploader
      ls /dev/ttyACM*
      # make sure all 16 boards are connected
+     cd ~/y-arena/firmware
      fu -e teensy40pi ./YArenaValveController/ "(/dev/ttyACM)([0-9]|1[0-5])"
    #+END_SRC

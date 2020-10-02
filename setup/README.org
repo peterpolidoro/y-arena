@@ -38,24 +38,29 @@
    #+BEGIN_SRC sh
      git clone https://github.com/janelia-experimental-technology/y-arena.git
      git submodule init
-     git submodule update --init --recursive
+     git submodule update --recursive
    #+END_SRC
 
 ** Run Setup Script
 
    #+BEGIN_SRC sh
-     ./pisetup.py install
-     sudo reboot
+     cd ~/y-arena/setup/
+     ./pisetup install
    #+END_SRC
+
+** Build Software Containers
+
+   [[../software/README.org]]
 
 ** Updating
 
    #+BEGIN_SRC sh
      sudo apt update
      sudo apt full-upgrade
-     ./pisetup.py uninstall
+     cd ~/y-arena/setup/
+     ./pisetup uninstall
      git pull origin master
-     git submodule update --init --recursive
-     ./pisetup.py install
+     git submodule update --recursive
+     ./pisetup install
      sudo reboot
    #+END_SRC

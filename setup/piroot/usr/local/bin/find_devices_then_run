@@ -23,7 +23,7 @@ class Docker(object):
         devs = sorted(Path('/dev').glob('ttyACM*'))
         devs_command = ['--device={0}'.format(dev) for dev in devs]
         docker_command.extend(devs_command)
-        docker_command.append('y_arena_valve_controller_ros_ycontroller')
+        docker_command.append('y_arena_valve_controller:latest')
         docker_command.extend(['ros2','launch','y_arena_valve_controller','controller.launch.py'])
         self._output(docker_command)
 
