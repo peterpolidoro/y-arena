@@ -1,0 +1,8 @@
+[Unit]
+Description="Start ycontroller on boot after delay."
+
+[Timer]
+OnBootSec=20s
+
+[Install]
+WantedBy=default.target

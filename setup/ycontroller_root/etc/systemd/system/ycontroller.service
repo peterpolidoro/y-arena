@@ -1,0 +1,7 @@
+[Unit]
+Description="Start ycontroller on boot after delay."
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/find_arenas_then_run
+TimeoutStartSec=0
