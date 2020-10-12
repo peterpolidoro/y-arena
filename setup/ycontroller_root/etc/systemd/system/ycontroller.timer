@@ -1,5 +1,5 @@
 [Unit]
-Description="Start ycontroller on boot after delay."
+Description=Start ycontroller on boot after delay
 
 [Timer]
 OnBootSec=20s

@@ -51,6 +51,23 @@
      ./ycontroller_setup install
    #+END_SRC
 
+** Enable systemd timer
+
+   #+BEGIN_SRC sh
+     sudo systemctl daemon-reload
+     sudo systemctl disable ycontroller.service
+     sudo systemctl enable ycontroller.timer
+     sudo reboot
+   #+END_SRC
+
+** Check systemd services and timers
+
+   #+BEGIN_SRC sh
+     systemctl status ycontroller.timer
+     systemctl status ycontroller.service
+     systemd-analyze plot > boot_analysis.svg
+   #+END_SRC
+
 ** Build Software Containers
 
    [[../software/README.org]]
