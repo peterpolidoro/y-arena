@@ -40,8 +40,14 @@
      python3 -m venv ~/venvs/fu
      source ~/venvs/fu/bin/activate
      pip install firmware_uploader
+   #+END_SRC
+
+** Update firmware on all boards
+
+   #+BEGIN_SRC sh
+     source ~/venvs/fu/bin/activate
      ls /dev/ttyACM*
      # make sure all 16 boards are connected
      cd ~/y-arena/firmware
-     fu -e teensy40pi ./YArenaValveController/ "(/dev/ttyACM)([0-9]|1[0-5])"
+     fu -e teensy40pi64 ./YArenaValveController/ "(/dev/ttyACM)([0-9]|1[0-5])"
    #+END_SRC
