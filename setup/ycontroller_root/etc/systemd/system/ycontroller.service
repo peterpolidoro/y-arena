@@ -1,6 +1,10 @@
 [Unit]
-Description=Find arenas then run
+Description=Finds arenas then runs container
+Wants=ycontroller.timer
 
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/find_arenas_then_run
+
+[Install]
+WantedBy=multi-user.target

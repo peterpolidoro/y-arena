@@ -1,8 +1,10 @@
 [Unit]
-Description=Start ycontroller on boot after delay
+Description=ycontroller trigger
+Requires=ycontroller.service
 
 [Timer]
+Unit=ycontroller.service
 OnBootSec=20s
 
 [Install]
-WantedBy=default.target
+WantedBy=timers.target
