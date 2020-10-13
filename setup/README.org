@@ -54,8 +54,6 @@
 ** Enable systemd timer
 
    #+BEGIN_SRC sh
-     sudo systemctl daemon-reload
-     sudo systemctl disable ycontroller.service
      sudo systemctl enable ycontroller.timer
      sudo reboot
    #+END_SRC
