@@ -1,10 +1,10 @@
 [Unit]
-Description=ycontroller trigger
-Requires=ycontroller.service
+Description=ycontroller timer
+After=arena-attached.service
+Requires=arena-attached.service
 
 [Timer]
-Unit=ycontroller.service
-OnBootSec=20s
+OnActiveSec=5s
 
 [Install]
-WantedBy=timers.target
+WantedBy=multi-user.target
