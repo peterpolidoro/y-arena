@@ -10,15 +10,18 @@ class Docker(object):
     def __init__(self,dry_run,*args,**kwargs):
         self.dry_run = dry_run
 
-    def _output(self,args):
+    def _output(self,args,shell=False):
         if not self.dry_run:
-            subprocess.run(args)
+            subprocess.run(args,shell)
         else:
-            print(" ".join(args))
+            if not shell:
+                print(" ".join(args))
+            else:
+                print(args)
 
     def run(self):
-        docker_command = ['docker','stop', '$(docker ps -aq)']
-        self._output(docker_command)
+        docker_command = 'docker stop $(docker ps -aq)'
+        self._output(docker_command,shell=True)
         docker_command = ['docker','run','-v','/dev/arena:/dev/arena']
         docker_command.extend(['--restart','unless-stopped'])
         docker_command.extend(['--pid=host','--net=host'])
