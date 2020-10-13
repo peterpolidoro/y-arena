@@ -5,6 +5,4 @@ Requires=arena-attached.service
 
 [Timer]
 OnActiveSec=5s
-
-[Install]
-WantedBy=multi-user.target
+RemainAfterElapse=False

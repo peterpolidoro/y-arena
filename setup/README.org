@@ -54,13 +54,13 @@
 ** Enable systemd timer
 
    #+BEGIN_SRC sh
-     sudo systemctl enable ycontroller.timer
      sudo reboot
    #+END_SRC
 
 ** Check systemd services and timers
 
    #+BEGIN_SRC sh
+     systemctl status arena-attached.service
      systemctl status ycontroller.timer
      systemctl status ycontroller.service
      systemd-analyze plot > boot_analysis.svg
