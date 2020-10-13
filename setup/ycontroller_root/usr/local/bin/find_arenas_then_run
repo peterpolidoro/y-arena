@@ -20,7 +20,7 @@ class Docker(object):
                 print(args)
 
     def run(self):
-        docker_command = 'docker stop $(docker ps -aq)'
+        docker_command = '/usr/bin/docker stop $(/usr/bin/docker ps -aq)'
         self._output(docker_command,shell=True)
         docker_command = ['docker','run','-v','/dev/arena:/dev/arena']
         docker_command.extend(['--restart','unless-stopped'])
