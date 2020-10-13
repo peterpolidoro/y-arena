@@ -5,5 +5,5 @@ Requires=docker.service
 
 [Service]
 TimeoutStartSec=0
-ExecStartPre=-/usr/bin/local/stop_all_containers.sh
+ExecStartPre=-/usr/local/bin/stop_all_containers.sh
 ExecStart=/usr/local/bin/find_arenas_then_run
