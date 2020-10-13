@@ -2,30 +2,50 @@
 
 import os
 import click
-import subprocess
+import docker
 from pathlib import Path
 
 class Docker(object):
 
     def __init__(self,dry_run,*args,**kwargs):
         self.dry_run = dry_run
+        self.client = docker.from_env()
 
-    def _output(self,args):
+    def _output(self,**kwargs):
         if not self.dry_run:
-            subprocess.run(args)
+            # subprocess.run(args)
         else:
-            print(" ".join(args))
+            print(kwargs)
 
     def run(self):
-        docker_command = ['docker','run','-v','/dev/arena:/dev/arena']
-        docker_command.extend(['--restart','unless-stopped'])
-        docker_command.extend(['--pid=host','--net=host'])
+        image = 'y_arena_valve_controller:latest'
+        command = ['ros2','launch','y_arena_valve_controller','controller.launch.py']
+        detach = True
         devs = sorted(Path('/dev').glob('ttyACM*'))
-        devs_command = ['--device={0}'.format(dev) for dev in devs]
-        docker_command.extend(devs_command)
-        docker_command.append('y_arena_valve_controller:latest')
-        docker_command.extend(['ros2','launch','y_arena_valve_controller','controller.launch.py'])
-        self._output(docker_command)
+        devices = ['{0}:{0}'.format(dev) for dev in devs]
+        network_mode = 'host'
+        pid_mode = 'host'
+        remove = True
+        restart_policy = {'Name':'on-failure'}
+        volumes = {'/dev/arena':{'bind':'/dev/arena'}}
+        self._output(image=image,
+                     command=command,
+                     detach=detach,
+                     devices=devices,
+                     network_mode=network_mode,
+                     pid_mode=pid_mode,
+                     remove=remove,
+                     restart_policy=restart_policy,
+                     volumes=volumes)
+        # docker_command = ['docker','run','-v','/dev/arena:/dev/arena']
+        # docker_command.extend(['--restart','unless-stopped'])
+        # docker_command.extend(['--pid=host','--net=host'])
+        # devs = sorted(Path('/dev').glob('ttyACM*'))
+        # devs_command = ['--device={0}'.format(dev) for dev in devs]
+        # docker_command.extend(devs_command)
+        # docker_command.append('y_arena_valve_controller:latest')
+        # docker_command.extend(['ros2','launch','y_arena_valve_controller','controller.launch.py'])
+        # self._output(docker_command)
 
 @click.command()
 @click.option('-d','--dry-run', is_flag=True)
