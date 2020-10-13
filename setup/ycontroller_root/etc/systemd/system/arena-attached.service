@@ -1,3 +1,5 @@
 [Service]
-Type=oneshot
+Type=simple
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker stop %n
 ExecStart=/usr/local/bin/find_arenas_then_run
