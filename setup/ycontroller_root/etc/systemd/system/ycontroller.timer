@@ -1,8 +1,0 @@
-[Unit]
-Description=ycontroller timer
-After=arena-attached.service
-Requires=arena-attached.service
-
-[Timer]
-OnActiveSec=5s
-RemainAfterElapse=False

@@ -49,20 +49,13 @@
    #+BEGIN_SRC sh
      cd ~/y-arena/setup/
      ./ycontroller_setup install
-   #+END_SRC
-
-** Enable systemd timer
-
-   #+BEGIN_SRC sh
      sudo reboot
    #+END_SRC
 
-** Check systemd services and timers
+** Check systemd service
 
    #+BEGIN_SRC sh
      systemctl status arena-attached.service
-     systemctl status ycontroller.timer
-     systemctl status ycontroller.service
      systemd-analyze plot > boot_analysis.svg
    #+END_SRC
 

@@ -1,3 +1,3 @@
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/arena_count.sh
+ExecStart=/usr/local/bin/find_arenas_then_run

@@ -1,6 +1,0 @@
-[Unit]
-Description=Finds arenas then runs container
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/arena_count.sh

@@ -17,6 +17,8 @@ class Docker(object):
             print(" ".join(args))
 
     def run(self):
+        docker_command = ['docker','stop', '$(docker ps -aq)']
+        self._output(docker_command)
         docker_command = ['docker','run','-v','/dev/arena:/dev/arena']
         docker_command.extend(['--restart','unless-stopped'])
         docker_command.extend(['--pid=host','--net=host'])
