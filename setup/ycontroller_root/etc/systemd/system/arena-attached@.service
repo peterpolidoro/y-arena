@@ -1,0 +1,10 @@
+[Unit]
+Description=Arena attached
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker stop %n
+ExecStartPre=-/usr/bin/docker rm %n
+ExecStart=/usr/local/bin/find_arenas_then_run
