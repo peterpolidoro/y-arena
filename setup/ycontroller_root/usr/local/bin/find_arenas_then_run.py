@@ -4,7 +4,6 @@ import os
 import click
 import docker
 from pathlib import Path
-import sys
 import filelock
 
 lock_path = 'docker_controller.lock'
