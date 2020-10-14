@@ -3,5 +3,7 @@ Description=Arena attached
 
 [Service]
 User=yuser
+Group=yuser
+WorkingDirectory=~
 Environment=PYTHONUNBUFFERED=1
 ExecStart=/usr/local/bin/find_arenas_then_run.py
