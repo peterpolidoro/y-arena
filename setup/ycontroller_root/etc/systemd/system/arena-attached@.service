@@ -2,4 +2,5 @@
 Description=Arena attached
 
 [Service]
-ExecStart=/usr/local/bin/find_arenas_then_run
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/local/bin/find_arenas_then_run.py

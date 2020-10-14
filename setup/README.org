@@ -44,6 +44,12 @@
      git submodule update --recursive
    #+END_SRC
 
+** Install dependencies
+
+   #+BEGIN_SRC sh
+     sudo apt install python3-filelock -y
+   #+END_SRC
+
 ** Run Setup Script
 
    #+BEGIN_SRC sh
