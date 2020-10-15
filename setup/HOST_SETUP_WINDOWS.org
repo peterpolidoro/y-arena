@@ -40,7 +40,7 @@
 
     #+BEGIN_SRC sh
       choco -v
-      choco install -y python --version 3.7
+      choco install -y python --version 3.7.9 --force
       python --version
       choco install -y cmake
       cmake --version
@@ -54,10 +54,9 @@
 
     #+BEGIN_SRC sh
       cd ~/Documents/MATLAB/
-      git clone https://github.com/janelia-experimental-technology/y-arena.git
-      cd y-arena
-      git submodule init
-      git submodule update --recursive
+      mkdir ros
+      cd ros
+      git clone https://github.com/janelia-ros/y_arena_valve_controller_ros.git
     #+END_SRC
 
 ** Try Examples
@@ -68,6 +67,8 @@
       pyenv
       ros2 node list
       ros2 msg list
-      ros2genmsg(y-arena)
+      folderPath = fullfile(pwd,'ros');
+      copyfile('ros\y_arena_valve_controller_ros\y_arena_interfaces',folderPath)
+      ros2genmsg(folderPath)
       ros2 msg list
     #+END_SRC
