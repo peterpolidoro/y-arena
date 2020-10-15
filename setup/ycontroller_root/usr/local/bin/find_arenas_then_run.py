@@ -38,7 +38,7 @@ class DockerController(object):
         devices = ['{0}:{0}'.format(dev) for dev in devs]
         network_mode = 'host'
         pid_mode = 'host'
-        restart_policy = {'Name':'on-failure'}
+        restart_policy = {'Name':'on-failure', "MaximumRetryCount": 5}
         volumes = {'/dev/arena':{'bind':'/dev/arena'}}
         self._run(image=image,
                   command=command,
