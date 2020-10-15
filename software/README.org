@@ -20,13 +20,6 @@
 
   Container restarts if a new arena is connected.
 
-* Run Another Container to Publish Test Messages
-
-  #+BEGIN_SRC sh
-    docker run --rm --net=host --pid=host -it y_arena_valve_controller:latest
-    ros2 topic pub --once /arena_valves_open y_arena_interfaces/msg/ArenaValves "{arena: 0, valves: [0, 1, 2]}"
-  #+END_SRC
-
 * Run Container Manually For Testing or After Stopping
 
   #+BEGIN_SRC sh
