@@ -41,10 +41,23 @@
     #+BEGIN_SRC sh
       choco -v
       choco install -y python --version 3.7
-      pyenv
+      python --version
       choco install -y cmake
       cmake --version
       choco install -y visualstudio2017community
+      choco install -y git
+    #+END_SRC
+
+*** Install Custom ROS Messages
+
+    In file explorer, right-click any folder and select 'Git Bash Here'.
+
+    #+BEGIN_SRC sh
+      cd ~/Documents/MATLAB/
+      git clone https://github.com/janelia-experimental-technology/y-arena.git
+      cd y-arena
+      git submodule init
+      git submodule update --recursive
     #+END_SRC
 
 ** Try Examples
@@ -52,5 +65,9 @@
 *** Matlab
 
     #+BEGIN_SRC matlab
+      pyenv
       ros2 node list
+      ros2 msg list
+      ros2genmsg(y-arena)
+      ros2 msg list
     #+END_SRC
