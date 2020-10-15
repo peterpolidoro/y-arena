@@ -57,6 +57,7 @@
       mkdir ros
       cd ros
       git clone https://github.com/janelia-ros/y_arena_valve_controller_ros.git
+      mkdir custom_msgs
     #+END_SRC
 
 ** Try Examples
@@ -67,8 +68,8 @@
       pyenv
       ros2 node list
       ros2 msg list
-      folderPath = fullfile(pwd,'ros');
-      copyfile('ros\y_arena_valve_controller_ros\y_arena_interfaces',folderPath)
+      folderPath = fullfile(pwd,'ros\custom_msgs');
+      copyfile('ros\y_arena_valve_controller_ros\y_arena_interfaces*',folderPath)
       ros2genmsg(folderPath)
       ros2 msg list
     #+END_SRC
