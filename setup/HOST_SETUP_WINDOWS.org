@@ -52,7 +52,7 @@
     In file explorer, right-click any folder and select 'Git Bash Here'.
 
     #+BEGIN_SRC sh
-      cd ~/Documents/MATLAB/
+      cd /c/
       mkdir ros
       cd ros
       git clone https://github.com/janelia-ros/y_arena_valve_controller_ros.git
@@ -70,8 +70,8 @@
       % follow instructions if necessary to use the Microsoft Visual C++ 2017 compiler
       ros2 node list
       ros2 msg list
-      folderPath = fullfile(pwd,'ros\custom_msgs');
-      copyfile('ros\y_arena_valve_controller_ros\y_arena_interfaces*',folderPath)
+      folderPath = fullfile(pwd,'C:\ros\custom_msgs');
+      copyfile('C:\ros\y_arena_valve_controller_ros\y_arena_interfaces*',folderPath)
       ros2genmsg(folderPath,'BuildConfiguration','fasterruns')
       ros2 msg list
     #+END_SRC
