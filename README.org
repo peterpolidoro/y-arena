@@ -22,9 +22,18 @@
      yArenaNode = ros2node('y_arena_matlab_node')
      arenaValvesOpenPub = ros2publisher(yArenaNode,'/arena_valves_open','y_arena_interfaces/ArenaValves')
      arenaValvesOpenMsg = ros2message('y_arena_interfaces/ArenaValves')
-     arenaValvesOpenMsg.arena = 0
-     arenaValvesOpenMsg.valves = {0,2,1}
+     arenaValvesOpenMsg.arena = uint8(0)
+     arenaValvesOpenMsg.valves = uint8([0 2 1])
      send(arenaValvesOpenPub,arenaValvesOpenMsg)
+   #+END_SRC
+
+** Linux Command Line Using Docker
+
+   #+BEGIN_SRC sh
+     docker build -t y_arena_valve_controller:latest ./software/y_arena_valve_controller_ros/
+     docker run --rm --net=host --pid=host -it y_arena_valve_controller:latest
+     ros2 service call /get_arenas_available y_arena_interfaces/srv/GetArenas
+     ros2 topic pub --once /arena_valves_open y_arena_interfaces/msg/ArenaValves "{arena: 0, valves: [0, 2, 1]}"
    #+END_SRC
 
 * System Architecture
