@@ -23,15 +23,6 @@
 
    https://www.mathworks.com/downloads/
 
-   - Click 'Windows key + r'
-   - Copy license.dat in \\jfrc-fs03.hhmi.org\software\Matlab\R2020b\ to
-     C:\Documents
-   - Selected copied license.dat to start installation
-   - Navigate to 'Control Panel > Network and Internet > Network Connections'
-   - Click 'Ethernet' click 'Properties' click 'Internet Protocol Version 4'
-     click 'Advanced' click 'DNS tab' click 'Append DNS suffixes'
-   - Add "hhmi.org" to DNS suffixes
-
 *** Install Chocolatey
 
     https://chocolatey.org/
@@ -47,6 +38,14 @@
       choco install -y visualstudio2017community
       choco install -y git
     #+END_SRC
+
+*** Setup Visual Studio
+
+    - Restart computer.
+    - Launch the Visual Studio Installer application from the Start Menu.
+    - Click Modify Visual Studio.
+    - Select 'Desktop development with C++'
+    - Install option with default selections.
 
 *** Install Custom ROS Messages
 
@@ -65,11 +64,14 @@
 *** Matlab
 
     #+BEGIN_SRC matlab
+      % check to make sure python 3.7 is used
       pyenv
+      mex -setup cpp
+      % follow instructions if necessary to use the Microsoft Visual C++ 2017 compiler
       ros2 node list
       ros2 msg list
       folderPath = fullfile(pwd,'ros\custom_msgs');
       copyfile('ros\y_arena_valve_controller_ros\y_arena_interfaces*',folderPath)
-      ros2genmsg(folderPath)
+      ros2genmsg(folderPath,'BuildConfiguration','fasterruns')
       ros2 msg list
     #+END_SRC
