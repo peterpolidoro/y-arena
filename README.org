@@ -16,6 +16,17 @@
 
 * Usage
 
+** Matlab
+
+   #+BEGIN_SRC matlab
+     yArenaNode = ros2node('y_arena_matlab_node')
+     arenaValvesOpenPub = ros2publisher(yArenaNode,'/arena_valves_open','y_arena_interfaces/ArenaValves')
+     arenaValvesOpenMsg = ros2message('y_arena_interfaces/ArenaValves')
+     arenaValvesOpenMsg.arena = 0
+     arenaValvesOpenMsg.valves = {0,2,1}
+     send(arenaValvesOpenPub,arenaValvesOpenMsg)
+   #+END_SRC
+
 * System Architecture
 
 ** Arena

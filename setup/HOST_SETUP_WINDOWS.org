@@ -59,9 +59,9 @@
       mkdir custom_msgs
     #+END_SRC
 
-** Try Examples
+*** Generate Custom ROS2 Messages in Matlab
 
-*** Matlab
+    - In Matlab:
 
     #+BEGIN_SRC matlab
       % check to make sure python 3.7 is used
@@ -70,7 +70,7 @@
       % follow instructions if necessary to use the Microsoft Visual C++ 2017 compiler
       ros2 node list
       ros2 msg list
-      folderPath = fullfile(pwd,'C:\ros\custom_msgs');
+      folderPath = 'C:\ros\custom_msgs'
       copyfile('C:\ros\y_arena_valve_controller_ros\y_arena_interfaces*',folderPath)
       ros2genmsg(folderPath,'BuildConfiguration','fasterruns')
       ros2 msg list
