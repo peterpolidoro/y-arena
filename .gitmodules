@@ -1,12 +1,3 @@
-[submodule "firmware/YArenaValveController"]
-	path = firmware/YArenaValveController
-	url = https://github.com/janelia-arduino/YArenaValveController.git
-[submodule "hardware/y_arena_valve_controller"]
-	path = hardware/y_arena_valve_controller
-	url = https://github.com/janelia-kicad/y_arena_valve_controller.git
-[submodule "software/y_arena_valve_controller_ros"]
-	path = software/y_arena_valve_controller_ros
-	url = https://github.com/janelia-ros/y_arena_valve_controller_ros.git
 [submodule "setup/raspberrypi_setup"]
 	path = setup/raspberrypi_setup
 	url = https://github.com/janelia-experimental-technology/raspberrypi_setup.git
