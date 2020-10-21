@@ -57,7 +57,7 @@
       cd /c/
       mkdir ros
       cd ros
-      git clone https://github.com/janelia-ros/y_arena_valve_controller_ros.git
+      git clone https://github.com/janelia-ros/y_arena_odor_controller_ros.git
       mkdir custom_msgs
     #+END_SRC
 
@@ -73,7 +73,7 @@
       ros2 node list
       ros2 msg list
       folderPath = 'C:\ros\custom_msgs'
-      copyfile('C:\ros\y_arena_valve_controller_ros\y_arena_interfaces*',folderPath)
+      copyfile('C:\ros\y_arena_odor_controller_ros\y_arena_interfaces*',folderPath)
       ros2genmsg(folderPath,'BuildConfiguration','fasterruns')
       ros2 msg list
     #+END_SRC

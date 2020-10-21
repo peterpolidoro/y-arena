@@ -32,9 +32,9 @@
     cd ~/y-arena
     git pull origin master
     git submodule update --recursive
-    cd software/y_arena_valve_controller_ros
+    cd software/y_arena_odor_controller_ros
     docker stop $(docker ps -aq)
     docker system prune -f
-    docker build -t y_arena_valve_controller:latest .
+    docker build -t y_arena_odor_controller:latest .
   #+END_SRC
 

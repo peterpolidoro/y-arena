@@ -49,5 +49,5 @@
      ls /dev/ttyACM*
      # make sure all 16 boards are connected
      cd ~/y-arena/firmware
-     fu -e teensy40pi64 ./YArenaValveController/ "(/dev/ttyACM)([0-9]|1[0-5])"
+     fu -e teensy40pi64 ./YArenaOdorController/ "(/dev/ttyACM)([0-9]|1[0-5])"
    #+END_SRC
