@@ -29,11 +29,13 @@
 
 *** Install Dependencies
 
+    Open an administrative shell.
+
     #+BEGIN_SRC sh
       choco -v
       choco install -y python --version 3.7.9 --force
       python --version
-      choco install -y cmake
+      choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System'
       cmake --version
       choco install -y visualstudio2017community
       choco install -y git
