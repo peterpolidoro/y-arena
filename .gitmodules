@@ -4,3 +4,6 @@
 [submodule "setup/docker_setup"]
 	path = setup/docker_setup
 	url = https://github.com/janelia-experimental-technology/docker_setup.git
+[submodule "hardware/y_arena_odor_controller"]
+	path = hardware/y_arena_odor_controller
+	url = https://github.com/janelia-kicad/y_arena_odor_controller.git
