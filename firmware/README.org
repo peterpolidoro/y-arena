@@ -17,12 +17,27 @@
 
 *** Cockpit Web Console
 
+    Local Network
+
     https://ycontroller.local:9090
+
+    Inside Janelia
+
+    https://ycontroller.hhmi.org:9090
+
+    Inside Janelia
+
+    https://ycontroller:9090
 
 *** SSH
 
     #+BEGIN_SRC sh
+      # local network
       ssh yuser@ycontroller.local
+      # inside Janelia
+      ssh yuser@ycontroller.hhmi.org
+      # inside Janelia
+      ssh yuser@ycontroller
     #+END_SRC
 
 ** Update Repository
@@ -33,21 +48,22 @@
      git submodule update --recursive
    #+END_SRC
 
-** Install firmware updater
+** Install pyty
 
    #+BEGIN_SRC sh
      sudo apt install python3-venv
-     python3 -m venv ~/venvs/fu
-     source ~/venvs/fu/bin/activate
-     pip install firmware_uploader
+     python3 -m venv ~/venvs/pyty
+     source ~/venvs/pyty/bin/activate
+     cd ~/y-arena/firmware/pyty
+     python setup.py install
    #+END_SRC
 
 ** Update firmware on all boards
 
    #+BEGIN_SRC sh
-     source ~/venvs/fu/bin/activate
+     source ~/venvs/pyty/bin/activate
      ls /dev/ttyACM*
      # make sure all 16 boards are connected
      cd ~/y-arena/firmware
-     fu -e teensy40pi64 ./YArenaOdorController/ "(/dev/ttyACM)([0-9]|1[0-5])"
+     pyty -e teensy40pi64 ./YArenaOdorController/ "(/dev/ttyACM)([0-9]|1[0-5])"
    #+END_SRC

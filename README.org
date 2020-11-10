@@ -20,11 +20,11 @@
 
    #+BEGIN_SRC matlab
      yArenaNode = ros2node('y_arena_matlab_node')
-     arenaOdorsOpenPub = ros2publisher(yArenaNode,'/arena_odors_open','y_arena_interfaces/ArenaOdors')
-     arenaOdorsOpenMsg = ros2message('y_arena_interfaces/ArenaOdors')
-     arenaOdorsOpenMsg.arena = uint8(0)
-     arenaOdorsOpenMsg.odors = uint8([0 2 1])
-     send(arenaOdorsOpenPub,arenaOdorsOpenMsg)
+     arenaOdorsPub = ros2publisher(yArenaNode,'/arena_odors','y_arena_interfaces/ArenaOdors')
+     arenaOdorsMsg = ros2message('y_arena_interfaces/ArenaOdors')
+     arenaOdorsMsg.arena = uint8(0)
+     arenaOdorsMsg.odors = uint8([0 2 1])
+     send(arenaOdorsPub,arenaOdorsMsg)
    #+END_SRC
 
 ** Linux Command Line Using Docker
@@ -33,7 +33,7 @@
      docker build -t y_arena_odor_controller:latest ./software/y_arena_odor_controller_ros/
      docker run --rm --net=host --pid=host -it y_arena_odor_controller:latest
      ros2 service call /get_arenas_available y_arena_interfaces/srv/GetArenas
-     ros2 topic pub --once /arena_odors_open y_arena_interfaces/msg/ArenaOdors "{arena: 0, odors: [0, 2, 1]}"
+     ros2 topic pub --once /arena_odors y_arena_interfaces/msg/ArenaOdors "{arena: 0, odors: [0, 2, 1]}"
    #+END_SRC
 
 * System Architecture
@@ -44,29 +44,34 @@
    looks like the letter "Y". A fly is placed in the arena and can walk up and
    down each of the three arms. Each arm has three odors, allowing the user to
    select one of three odors for each arm at a time. So there are a total of
-   nine odors for each arena. Three and only three odors are open at any given
-   time, one for each arena arm.
+   nine odors for each arena. Three and only three odors are active at any given
+   time, one active odor for each arena arm.
 
-*** Vector Representation of Open Odors
+*** Vector Representation of Arena Odors
 
-    |             | ARM 0  | ARM 1  | ARM 2  |
-    |-------------+--------+--------+--------|
-    | ODOR 2     | OPEN   | CLOSED | CLOSED |
-    | ODOR 1     | CLOSED | OPEN   | CLOSED |
-    | ODOR 0     | CLOSED | CLOSED | OPEN   |
-    | odors_open | 2      | 1      | 0      |
+    arena_odors = [arm 0 odor, arm 1 odor, arm 2 odor]
 
-    |             | ARM 0  | ARM 1  | ARM 2  |
-    |-------------+--------+--------+--------|
-    | ODOR 2     | OPEN   | OPEN   | OPEN   |
-    | ODOR 1     | CLOSED | CLOSED | CLOSED |
-    | ODOR 0     | CLOSED | CLOSED | CLOSED |
-    | odors_open | 2      | 2      | 2      |
-
-    The three open odors can be represented by a vector, where each element of
+    The three active odors can be represented by a vector, where each element of
     the vector represents one of the arms, ARM 0, ARM 1, and ARM 2. Each vector
-    element can take one of three values, 0, 1, or 2, representing ODOR 0,
-    ODOR 1, or ODOR 2.
+    element can take one of three values, 0, 1, or 2, representing ODOR 0, ODOR
+    1, or ODOR 2.
+
+**** arena_odors [0, 2, 1]
+
+     |       | ODOR 0   | ODOR 1   | ODOR 2   |
+     |-------+----------+----------+----------|
+     | ARM 2 | INACTIVE | ACTIVE   | INACTIVE |
+     | ARM 1 | INACTIVE | INACTIVE | ACTIVE   |
+     | ARM 0 | ACTIVE   | INACTIVE | INACTIVE |
+
+**** arena_odors [0, 0, 0]
+
+     |       | ODOR 0   | ODOR 1   | ODOR 2   |
+     |-------+----------+----------+----------|
+     | ARM 2 | ACTIVE   | INACTIVE | INACTIVE |
+     | ARM 1 | ACTIVE   | INACTIVE | INACTIVE |
+     | ARM 0 | ACTIVE   | INACTIVE | INACTIVE |
+
 
 * Setup
 

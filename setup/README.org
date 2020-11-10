@@ -28,12 +28,27 @@
 
 *** Cockpit Web Console
 
+    Local Network
+
     https://ycontroller.local:9090
+
+    Inside Janelia
+
+    https://ycontroller.hhmi.org:9090
+
+    Inside Janelia
+
+    https://ycontroller:9090
 
 *** SSH
 
     #+BEGIN_SRC sh
+      # local network
       ssh yuser@ycontroller.local
+      # inside Janelia
+      ssh yuser@ycontroller.hhmi.org
+      # inside Janelia
+      ssh yuser@ycontroller
     #+END_SRC
 
 ** Clone this repository
@@ -62,7 +77,7 @@
 ** Check systemd service
 
    #+BEGIN_SRC sh
-     systemctl status arena-attached.service
+     systemctl status arena-attached@00.service
      systemd-analyze plot > boot_analysis.svg
    #+END_SRC
 
