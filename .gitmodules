@@ -7,3 +7,9 @@
 [submodule "hardware/y_arena_odor_controller"]
 	path = hardware/y_arena_odor_controller
 	url = https://github.com/janelia-kicad/y_arena_odor_controller.git
+[submodule "firmware/YArenaOdorController"]
+	path = firmware/YArenaOdorController
+	url = https://github.com/janelia-arduino/YArenaOdorController.git
+[submodule "software/y_arena_odor_controller_ros"]
+	path = software/y_arena_odor_controller_ros
+	url = https://github.com/janelia-ros/y_arena_odor_controller_ros.git
