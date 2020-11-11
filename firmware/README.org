@@ -51,10 +51,14 @@
 ** Install pyty
 
    #+BEGIN_SRC sh
+     sudo apt-get install build-essential cmake libudev-dev pkg-config qtbase5-dev
      sudo apt install python3-venv
      python3 -m venv ~/venvs/pyty
      source ~/venvs/pyty/bin/activate
+     pip install -U pip wheel setuptools
      cd ~/y-arena/firmware/pyty
+     git submodule init
+     git submodule update --recursive
      python setup.py install
    #+END_SRC
 
