@@ -59,7 +59,13 @@
      cd ~/y-arena/firmware/pyty
      git submodule init
      git submodule update --recursive
-     python setup.py install
+     docker build -f Dockerfile.bdist.aarch64 -t pyty.bdist:latest .
+     docker run -it -v `pwd`:/io pyty.bdist:latest /bin/bash
+     /opt/python/cp38-cp38/bin/python setup.py sdist bdist_wheel
+     auditwheel repair dist/*.whl
+     exit
+     pip install wheelhouse/*.whl
+     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/venvs/pyty/lib/python3.8/site-packages/pyty.libs
    #+END_SRC
 
 ** Update firmware on all boards
