@@ -51,14 +51,15 @@
 ** Install pyty
 
    #+BEGIN_SRC sh
-     sudo apt-get install build-essential cmake libudev-dev pkg-config qtbase5-dev
      sudo apt install python3-venv
      python3 -m venv ~/venvs/pyty
      source ~/venvs/pyty/bin/activate
      pip install -U pip wheel setuptools
-     cd ~/y-arena/firmware/pyty
+     cd ~
+     git clone https://github.com/janelia-pypi/pyty.git
+     cd ~/pyty
      git submodule init
-     git submodule update --recursive
+     git submodule update
      docker build -f Dockerfile.bdist.aarch64 -t pyty.bdist:latest .
      docker run -it -v `pwd`:/io pyty.bdist:latest /bin/bash
      /opt/python/cp38-cp38/bin/python setup.py sdist bdist_wheel
