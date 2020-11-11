@@ -13,6 +13,3 @@
 [submodule "software/y_arena_odor_controller_ros"]
 	path = software/y_arena_odor_controller_ros
 	url = https://github.com/janelia-ros/y_arena_odor_controller_ros.git
-[submodule "firmware/pyty"]
-	path = firmware/pyty
-	url = https://github.com/janelia-pypi/pyty.git
