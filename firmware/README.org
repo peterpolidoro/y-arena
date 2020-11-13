@@ -13,32 +13,7 @@
 
 * Update Firmware
 
-** Connect to Raspberry Pi
-
-*** Cockpit Web Console
-
-    Local Network
-
-    https://ycontroller.local:9090
-
-    Inside Janelia
-
-    https://ycontroller.hhmi.org:9090
-
-    Inside Janelia
-
-    https://ycontroller:9090
-
-*** SSH
-
-    #+BEGIN_SRC sh
-      # local network
-      ssh yuser@ycontroller.local
-      # inside Janelia
-      ssh yuser@ycontroller.hhmi.org
-      # inside Janelia
-      ssh yuser@ycontroller
-    #+END_SRC
+  Connect to ycontroller from host machine.
 
 ** Update Repository
 
