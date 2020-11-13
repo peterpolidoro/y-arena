@@ -31,8 +31,8 @@ class DockerController(object):
                 print('docker stop {0}'.format(container.name))
 
     def run(self):
-        image = 'y_arena_valve_controller:latest'
-        command = ['ros2','launch','y_arena_valve_controller','controller.launch.py']
+        image = 'y_arena_odor_controller:latest'
+        command = ['ros2','launch','y_arena_odor_controller','controller.launch.py']
         detach = True
         devs = sorted(Path('/dev').glob('ttyACM*'))
         devices = ['{0}:{0}'.format(dev) for dev in devs]
