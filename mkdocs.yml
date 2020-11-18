@@ -39,3 +39,5 @@ nav:
        - Module Side: images/module_side.md
        - Module Top: images/module_top.md
        - Module Top Labeled: images/module_top_labeled.md
+    - Hardware:
+       - y_arena_odor_controller: hardware/y_arena_odor_controller/y_arena_odor_controller.md
