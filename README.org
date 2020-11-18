@@ -12,7 +12,11 @@
 
 ** Description
 
-   Main repository for the Turner Lab Y-Arena.
+   Janelia Turner Lab Y-Arena odor rig.
+
+** Documentation
+
+   https://janelia-experimental-technology.github.io/y-arena/
 
 * Usage
 
@@ -105,7 +109,6 @@
     | 4 | 6 | 12 | 14 |
     | 1 | 3 |  9 | 11 |
     | 0 | 2 |  8 | 10 |
-
 
 * Connect to ycontroller from Host Machine
 

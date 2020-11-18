@@ -1,0 +1,5 @@
+* Y-Arena
+
+  Janelia Turner Lab Y-Arena odor rig.
+
+  [[file:./images/y_arena_side.png]]
