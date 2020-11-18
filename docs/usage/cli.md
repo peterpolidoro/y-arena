@@ -1,16 +1,4 @@
-- [Usage](#orgcd3cffd)
-  - [Linux Command Line Using Docker](#orgd6eead8)
-
-
-<a id="orgcd3cffd"></a>
-
-# Usage
-
-
-<a id="orgd6eead8"></a>
-
-## Linux Command Line Using Docker
-
+# Linux Command Line Using Docker
 ```sh
 docker build -t y_arena_odor_controller:latest ./software/y_arena_odor_controller_ros/
 docker run --rm --net=host --pid=host -it y_arena_odor_controller:latest

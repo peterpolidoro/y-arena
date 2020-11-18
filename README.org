@@ -18,36 +18,6 @@
 
    https://janelia-experimental-technology.github.io/y-arena/
 
-* Usage
-
-** Matlab
-
-   #+BEGIN_SRC matlab
-     yArenaNode = ros2node('y_arena_matlab_node')
-     arenaOdorsPub = ros2publisher(yArenaNode,'/arena_odors','y_arena_interfaces/ArenaOdors')
-     arenaOdorsMsg = ros2message('y_arena_interfaces/ArenaOdors')
-     arenaOdorsMsg.arena = uint8(0)
-     arenaOdorsMsg.odors = uint8([0 2 1])
-     send(arenaOdorsPub,arenaOdorsMsg)
-   #+END_SRC
-
-** Linux Command Line Using Docker
-
-   #+BEGIN_SRC sh
-     docker build -t y_arena_odor_controller:latest ./software/y_arena_odor_controller_ros/
-     docker run --rm --net=host --pid=host -it y_arena_odor_controller:latest
-     ros2 service call /get_arenas_available y_arena_interfaces/srv/GetArenas
-     ros2 topic pub --once /arena_odors y_arena_interfaces/msg/ArenaOdors "{arena: 0, odors: [0, 2, 1]}"
-     ros2 run y_arena_odor_controller tester &
-     ros2 topic echo /arena_odors
-   #+END_SRC
-
-* Images
-
-  [[file:./docs/images/y_arena_side.png]]
-
-  [[file:./docs/images/y_arena_top_labeled.png]]
-
 * System Architecture
 
 ** Arena

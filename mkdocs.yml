@@ -1,5 +1,5 @@
 site_name: Y-Arena
-site_description: Janelia Turner Lab Y-Arena
+site_description: Janelia Turner Lab Y-Arena Odor Rig
 site_author: Peter Polidoro
 
 copyright: 'Copyright &copy; 2020 Peter Polidoro'
@@ -7,7 +7,7 @@ copyright: 'Copyright &copy; 2020 Peter Polidoro'
 theme:
   name: 'material'
   language: en
-  logo: 'images/y_logo.png'
+  logo: 'y_logo.png'
   feature:
     tabs: true
   palette:
@@ -29,23 +29,12 @@ markdown_extensions:
 
 nav:
     - Home: index.md
-
     - Usage:
-       - Matlab: usage_matlab.md
-       - Linux Command Line: usage_cli.md
-
-    - Tutorials:
-
-       - "Summary":                           tutorials_summary.md
-       - "Tutorial 1: Create a Tree":         tutorial_01_first_tree.md
-       - "Tutorial 2: Basic Ports":           tutorial_02_basic_ports.md
-       - "Tutorial 3: Generic ports":         tutorial_03_generic_ports.md
-       - "Tutorial 4: Sequences":             tutorial_04_sequence_star.md
-       - "Tutorial 5: Subtrees and Loggers":  tutorial_05_subtrees.md
-       - "Tutorial 6: Ports remapping":       tutorial_06_subtree_ports.md
-       - "Tutorial 7: Wrap legacy code":      tutorial_07_legacy.md
-       - "Tutorial 8: Additional arguments":  tutorial_08_additional_args.md
-       - "Tutorial 9: Coroutines":            tutorial_09_coroutines.md
-
-    - Migration Guide:
-       - Migrate from Version 2.X:  MigrationGuide.md
+       - Arena Odors Message: usage/arena_odors_message.md
+       - Matlab: usage/matlab.md
+       - Linux Command Line: usage/cli.md
+    - Images:
+       - Arena: images/arena.md
+       - Module Side: images/module_side.md
+       - Module Top: images/module_top.md
+       - Module Top Labeled: images/module_top_labeled.md
