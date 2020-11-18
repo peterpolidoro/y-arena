@@ -72,6 +72,8 @@
      | ARM 1 | INACTIVE | INACTIVE | ACTIVE   |
      | ARM 0 | ACTIVE   | INACTIVE | INACTIVE |
 
+     [[file:./images/arena_odors_0-2-1.png]]
+
 **** arena_odors [0, 0, 0]
 
      |       | ODOR 0   | ODOR 1   | ODOR 2   |
@@ -79,6 +81,8 @@
      | ARM 2 | ACTIVE   | INACTIVE | INACTIVE |
      | ARM 1 | ACTIVE   | INACTIVE | INACTIVE |
      | ARM 0 | ACTIVE   | INACTIVE | INACTIVE |
+
+     [[file:./images/arena_odors_0-0-0.png]]
 
 ** Module
 
