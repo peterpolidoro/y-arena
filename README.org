@@ -38,6 +38,12 @@
      ros2 topic echo /arena_odors
    #+END_SRC
 
+* Images
+
+  [[file:./images/y_arena_side.png]]
+
+  [[file:./images/y_arena_top_labeled.png]]
+
 * System Architecture
 
 ** Arena
