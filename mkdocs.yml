@@ -1,4 +1,4 @@
-site_name: Janelia Turner Lab Y-Arena Odor Rig
+site_name: Y-Arena
 site_description: Janelia Turner Lab Y-Arena Odor Rig
 site_author: Peter Polidoro
 
@@ -40,4 +40,6 @@ nav:
        - Module Top: images/module_top.md
        - Module Top Labeled: images/module_top_labeled.md
     - Hardware:
+       - y_arena_odor_controller: hardware/y_arena_odor_controller/y_arena_odor_controller.md
+    - Firmware:
        - y_arena_odor_controller: hardware/y_arena_odor_controller/y_arena_odor_controller.md

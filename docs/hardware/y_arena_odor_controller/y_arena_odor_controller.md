@@ -1,21 +1,4 @@
-- [Repository Information](#orgc6530e9)
-  - [Description](#org5c6ca96)
-- [Images](#orga6285ff)
-- [Schematic](#org7f61687)
-- [Gerbers](#orgfb2865a)
-- [Bill of Materials](#orgd9371e2)
-  - [PCB Parts](#org33410f6)
-  - [Supplemental Parts](#org136273a)
-  - [Vendor Parts Lists](#org000b85e)
-- [Supplemental Documentation](#orgff06e15)
-  - [Assembly Instructions](#org2694ab8)
-- [Manufacturing Archive](#org64aed02)
-
-
-
-<a id="orgc6530e9"></a>
-
-# Repository Information
+## Repository Information
 
 -   **Name:** y\_arena\_odor\_controller
 -   **Version:** 2.0
@@ -24,26 +7,17 @@
 -   **Author:** Peter Polidoro
 -   **Email:** peterpolidoro@gmail.com
 
-
-<a id="org5c6ca96"></a>
-
 ## Description
 
-This board controls the y-arena odors for the Turner lab.
+This board controls the y-arena odors for the Janelia Turner lab.
 
+## Images
 
-<a id="orga6285ff"></a>
+![img](./images/top.png)
 
-# Images
+![img](./images/bottom.png)
 
-
-<a id="org7f61687"></a>
-
-# Schematic
-
-[./schematic/y\_arena\_odor\_controller.pdf](./schematic/y_arena_odor_controller.pdf)
-
-[./schematic/y\_arena\_valve\_controller.pdf](./schematic/y_arena_valve_controller.pdf)
+## Schematic
 
 ![img](./schematic/images/schematic00.png)
 
@@ -85,24 +59,14 @@ This board controls the y-arena odors for the Turner lab.
 
 ![img](./schematic/images/schematic19.png)
 
-
-<a id="orgfb2865a"></a>
-
-# Gerbers
+## Gerbers
 
 ![img](./gerbers/images/gerbers00.png)
 
 ![img](./gerbers/images/gerbers01.png)
 
-
-<a id="orgd9371e2"></a>
-
-# Bill of Materials
-
-
-<a id="org33410f6"></a>
-
-## PCB Parts
+## Bill of Materials
+### PCB Parts
 
 | Item | Reference(s)                                                        | Quantity | Manufacturer                    | Manufacturer Part Number | Vendor   | Vendor Part Number   | Description                    | Package            |
 |---- |------------------------------------------------------------------- |-------- |------------------------------- |------------------------ |-------- |-------------------- |------------------------------ |------------------ |
@@ -122,10 +86,7 @@ This board controls the y-arena odors for the Turner lab.
 | 14   | U1 U2 U3 U4 U5 U6 U7 U8 U9                                          | 9        | Texas Instruments               | DRV103U                  | Digi-Key | 296-11622-ND         | IC LO-SIDE DRIVER PWM 8SOIC    | 8SOIC              |
 |      | FID1 FID2 FID3 FID4 MH1 MH2 MH3                                     | 7        |                                 |                          |          |                      |                                |                    |
 
-
-<a id="org136273a"></a>
-
-## Supplemental Parts
+### Supplemental Parts
 
 | Item | Quantity | Manufacturer                 | Manufacturer Part Number        | Vendor   | Vendor Part Number                 | Description                       |
 |---- |-------- |---------------------------- |------------------------------- |-------- |---------------------------------- |--------------------------------- |
@@ -146,33 +107,3 @@ This board controls the y-arena odors for the Turner lab.
 | 15   | 1        | Tripp Lite                   | U336-000-R                      | Digi-Key | TL824-ND                           | USB 3.0 TO ETHERNET ADAPTER       |
 | 16   | 1        | Assmann WSW Components       | A-MCSSP60010/B                  | Digi-Key | AE10190-ND                         | CABLE MOD 8P8C PLUG-PLUG 3.28FT   |
 | 17   | 1        | Tripp Lite                   | U024-006                        | Digi-Key | TL776-ND                           | CABLE USB 2.0 EXTENSION A M/F 6FT |
-
-
-<a id="org000b85e"></a>
-
-## Vendor Parts Lists
-
-[./bom/Digi-Key\_parts.csv](./bom/Digi-Key_parts.csv)
-
-[./bom/supplemental\_Digi-Key\_parts.csv](./bom/supplemental_Digi-Key_parts.csv)
-
-
-<a id="orgff06e15"></a>
-
-# Supplemental Documentation
-
-
-<a id="org2694ab8"></a>
-
-## Assembly Instructions
-
--   Solder surface mount and through hole components onto the pcb.
-
-
-<a id="org64aed02"></a>
-
-# Manufacturing Archive
-
-Send manufacturing zip file to your favorite PCB manufacturer for fabrication.
-
-[./manufacturing/y\_arena\_odor\_controller\_v2.0.zip](./manufacturing/y_arena_odor_controller_v2.0.zip)
