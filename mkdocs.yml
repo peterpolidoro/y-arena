@@ -1,4 +1,4 @@
-site_name: Y-Arena
+site_name: Janelia Turner Lab Y-Arena Odor Rig
 site_description: Janelia Turner Lab Y-Arena Odor Rig
 site_author: Peter Polidoro
 
@@ -30,9 +30,10 @@ markdown_extensions:
 nav:
     - Home: index.md
     - Usage:
-       - Arena Odors Message: usage/arena_odors_message.md
        - Matlab: usage/matlab.md
        - Linux Command Line: usage/cli.md
+       - Arena Odors Message: usage/arena_odors_message.md
+       - Odors Vector: usage/odors_vector.md
     - Images:
        - Arena: images/arena.md
        - Module Side: images/module_side.md
