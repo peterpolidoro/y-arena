@@ -1,4 +1,4 @@
-# Linux Command Line Using Docker
+# Docker Command Line
 ```sh
 docker build -t y_arena_odor_controller:latest ./software/y_arena_odor_controller_ros/
 docker run --rm --net=host --pid=host -it y_arena_odor_controller:latest

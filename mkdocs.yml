@@ -7,7 +7,7 @@ copyright: 'Copyright &copy; 2020 Peter Polidoro'
 theme:
   name: 'material'
   language: en
-  logo: 'y_logo.png'
+  logo: 'img/y_logo.png'
   feature:
     tabs: true
   palette:
@@ -31,7 +31,7 @@ nav:
     - Home: index.md
     - Usage:
        - Matlab: usage/matlab.md
-       - Linux Command Line: usage/cli.md
+       - Docker Command Line: usage/cli.md
        - Arena Odors Message: usage/arena_odors_message.md
        - Odors Vector: usage/odors_vector.md
     - Images:
@@ -40,6 +40,4 @@ nav:
        - Module Top: images/module_top.md
        - Module Top Labeled: images/module_top_labeled.md
     - Hardware:
-       - y_arena_odor_controller: hardware/y_arena_odor_controller/y_arena_odor_controller.md
-    - Firmware:
-       - y_arena_odor_controller: hardware/y_arena_odor_controller/y_arena_odor_controller.md
+       - y_arena_odor_controller: hardware/y_arena_odor_controller.md

@@ -17,7 +17,7 @@ can take one of three values, 0, 1, or 2, representing ODOR 0, ODOR 1, or ODOR
 | ARM 1 | INACTIVE | INACTIVE | ACTIVE   |
 | ARM 0 | ACTIVE   | INACTIVE | INACTIVE |
 
-![img](./images/odors_0-2-1.png)
+![img](img/odors_0-2-1.png)
 
 ## odors = [0, 0, 0]
 
@@ -27,4 +27,4 @@ can take one of three values, 0, 1, or 2, representing ODOR 0, ODOR 1, or ODOR
 | ARM 1 | ACTIVE | INACTIVE | INACTIVE |
 | ARM 0 | ACTIVE | INACTIVE | INACTIVE |
 
-![img](./images/odors_0-0-0.png)
+![img](img/odors_0-0-0.png)
