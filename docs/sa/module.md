@@ -13,5 +13,5 @@ A module contains four arenas.
 
 ## Images
 
-![img](./module_side.png)
-![img](./module_top_labeled.png)
+![img](img/module_side.png)
+![img](img/module_top_labeled.png)
