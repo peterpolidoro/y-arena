@@ -38,6 +38,10 @@ nav:
     - Odors Vector: usage/odors_vector.md
     - SSH: usage/ssh.md
     - Web Console: usage/web_console.md
+  - Setup:
+    - ycontroller: setup/ycontroller.md
+    - Linux Host: setup/linux_host.md
+    - Windows Matlab Host: setup/windows_host.md
   - System Architecture:
     - Arena: sa/arena.md
     - Module: sa/module.md
@@ -48,7 +52,3 @@ nav:
     - YArenaOdorController: firmware/y_arena_odor_controller.md
   - Software:
     - y_arena_odor_controller_ros: software/y_arena_odor_controller_ros.md
-  - Setup:
-    - ycontroller: setup/ycontroller.md
-    - Linux Host: setup/linux_host.md
-    - Windows Matlab Host: setup/windows_host.md
