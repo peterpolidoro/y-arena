@@ -9,7 +9,7 @@
 
 Connect to ycontroller from host machine using SSH or web console.
 
-## Clone this repository
+## Clone the y-arena repository
 
 ```sh
 git clone https://github.com/janelia-experimental-technology/y-arena.git

@@ -50,4 +50,5 @@ nav:
     - y_arena_odor_controller_ros: software/y_arena_odor_controller_ros.md
   - Setup:
     - ycontroller: setup/ycontroller.md
-    - Windows Host: setup/windows_host.md
+    - Linux Host: setup/linux_host.md
+    - Windows Matlab Host: setup/windows_host.md
