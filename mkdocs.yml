@@ -48,3 +48,6 @@ nav:
     - YArenaOdorController: firmware/y_arena_odor_controller.md
   - Software:
     - y_arena_odor_controller_ros: software/y_arena_odor_controller_ros.md
+  - Setup:
+    - ycontroller: setup/ycontroller.md
+    - Windows Host: setup/windows_host.md

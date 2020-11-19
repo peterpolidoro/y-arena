@@ -1,0 +1,64 @@
+# Windows 10
+
+Check for new Windows updates and install all.
+
+## Matlab 2020b
+
+Download and install Matlab R2020b with ROS Toolbox.
+
+<https://www.mathworks.com/downloads/>
+
+## Install Chocolatey
+
+<https://chocolatey.org/>
+
+## Install Dependencies
+
+Open an administrative shell.
+
+```sh
+choco -v
+choco install -y python --version 3.7.9 --force
+python --version
+choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+cmake --version
+choco install -y visualstudio2017community
+choco install -y git
+```
+
+## Setup Visual Studio
+
+- Restart computer.
+- Launch the Visual Studio Installer application from the Start Menu.
+- Click Modify Visual Studio.
+- Select 'Desktop development with C++'
+- Install option with default selections.
+
+## Install Custom ROS Messages
+
+In file explorer, right-click any folder and select 'Git Bash Here'.
+
+```sh
+cd /c/
+mkdir ros
+cd ros
+git clone https://github.com/janelia-ros/y_arena_odor_controller_ros.git
+mkdir custom_msgs
+```
+
+## Generate Custom ROS2 Messages in Matlab
+
+In Matlab:
+
+```matlab
+% check to make sure python 3.7 is used
+pyenv
+mex -setup cpp
+% follow instructions if necessary to use the Microsoft Visual C++ 2017 compiler
+ros2 node list
+ros2 msg list
+folderPath = 'C:\ros\custom_msgs'
+copyfile('C:\ros\y_arena_odor_controller_ros\y_arena_interfaces*',folderPath)
+ros2genmsg(folderPath,'BuildConfiguration','fasterruns')
+ros2 msg list
+```
