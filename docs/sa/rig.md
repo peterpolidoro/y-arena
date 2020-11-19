@@ -1,9 +1,12 @@
 # Rig
 
+## Description
+
 A rig contains four modules for a total of sixteen arenas.
 
-## Rig Layout
+## Layout
 
+|   |   |    |    |
 |---|---|----|----|
 | 5 | 7 | 13 | 15 |
 | 4 | 6 | 12 | 14 |
