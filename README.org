@@ -19,68 +19,6 @@
 
    https://janelia-experimental-technology.github.io/y-arena/
 
-* System Architecture
-
-** Arena
-
-   Each arena contains three arms. The three arms are arranged so the arena
-   looks like the letter "Y". A fly is placed in the arena and can walk up and
-   down each of the three arms. Each arm has three odors, allowing the user to
-   select one of three odors for each arm at a time. So there are a total of
-   nine odors for each arena. Three and only three odors are active at any given
-   time, one active odor for each arena arm.
-
-*** Vector Representation of Arena Odors
-
-    arena_odors = [arm 0 odor, arm 1 odor, arm 2 odor]
-
-    The three active odors can be represented by a vector, where each element of
-    the vector represents one of the arms, ARM 0, ARM 1, and ARM 2. Each vector
-    element can take one of three values, 0, 1, or 2, representing ODOR 0, ODOR
-    1, or ODOR 2.
-
-**** arena_odors [0, 2, 1]
-
-     |       | ODOR 0   | ODOR 1   | ODOR 2   |
-     |-------+----------+----------+----------|
-     | ARM 2 | INACTIVE | ACTIVE   | INACTIVE |
-     | ARM 1 | INACTIVE | INACTIVE | ACTIVE   |
-     | ARM 0 | ACTIVE   | INACTIVE | INACTIVE |
-
-     [[file:./docs/images/arena_odors_0-2-1.png]]
-
-**** arena_odors [0, 0, 0]
-
-     |       | ODOR 0   | ODOR 1   | ODOR 2   |
-     |-------+----------+----------+----------|
-     | ARM 2 | ACTIVE   | INACTIVE | INACTIVE |
-     | ARM 1 | ACTIVE   | INACTIVE | INACTIVE |
-     | ARM 0 | ACTIVE   | INACTIVE | INACTIVE |
-
-     [[file:./docs/images/arena_odors_0-0-0.png]]
-
-** Module
-
-   A module contains four arenas.
-
-*** Module Layout
-
-    |---+---|
-    | 1 | 3 |
-    | 0 | 2 |
-
-** Rig
-
-   A rig contains four modules for a total of sixteen arenas.
-
-*** Rig Layout
-
-    |---+---+----+----|
-    | 5 | 7 | 13 | 15 |
-    | 4 | 6 | 12 | 14 |
-    | 1 | 3 |  9 | 11 |
-    | 0 | 2 |  8 | 10 |
-
 * Connect to ycontroller from Host Machine
 
 ** Cockpit Web Console
@@ -105,19 +43,3 @@
      # inside Janelia
      ssh yuser@ycontroller.hhmi.org
    #+END_SRC
-
-* Setup
-
-  [[./setup/README.org]]
-
-* Firmware
-
-  [[./firmware/README.org]]
-
-* Hardware
-
-  [[./hardware/README.org]]
-
-* Software
-
-  [[./software/README.org]]

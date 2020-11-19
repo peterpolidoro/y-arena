@@ -34,10 +34,9 @@ nav:
        - Docker Command Line: usage/cli.md
        - Arena Odors Message: usage/arena_odors_message.md
        - Odors Vector: usage/odors_vector.md
-    - Images:
-       - Arena: images/arena.md
-       - Module Side: images/module_side.md
-       - Module Top: images/module_top.md
-       - Module Top Labeled: images/module_top_labeled.md
+    - System Architecture:
+       - Arena: sa/arena.md
+       - Module: sa/module.md
+       - Rig: sa/rig.md
     - Hardware:
        - y_arena_odor_controller: hardware/y_arena_odor_controller.md

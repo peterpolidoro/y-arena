@@ -1,2 +1,0 @@
-# Arena
-![img](./arena.png)
