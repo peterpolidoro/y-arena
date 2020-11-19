@@ -19,27 +19,3 @@
 
    https://janelia-experimental-technology.github.io/y-arena/
 
-* Connect to ycontroller from Host Machine
-
-** Cockpit Web Console
-
-   https://ycontroller:9090
-
-   Local Network
-
-   https://ycontroller.local:9090
-
-   Inside Janelia
-
-   https://ycontroller.hhmi.org:9090
-
-
-** SSH
-
-   #+BEGIN_SRC sh
-     ssh yuser@ycontroller
-     # local network
-     ssh yuser@ycontroller.local
-     # inside Janelia
-     ssh yuser@ycontroller.hhmi.org
-   #+END_SRC
