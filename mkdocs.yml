@@ -18,7 +18,7 @@ theme:
     code: Roboto Mono
 
 repo_name: 'y-arena'
-repo_url: 'https://github.com/janelia-experimental-technology/y-arena.git'
+repo_url: 'https://github.com/janelia-experimental-technology/y-arena'
 
 markdown_extensions:
   - admonition
